@@ -11,4 +11,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  root controller: 'dashboard', action: :show
+  get 'quizzes', to: 'quizzes#index'
+  get 'quizzes/:id', to: 'quizzes#show'
 end
