@@ -1,0 +1,9 @@
+
+
+<tr id="<%= dom_id quiz %>">
+  <td><%= quiz.id %></td>
+  <td><%= link_to quiz %></td>
+  <td><%= button_to 'Edit', edit_quiz_path(quiz), method: :get%> </td>
+  <td><%= button_to "Destroy", quiz, method: :delete %></td>
+</tr>
+
