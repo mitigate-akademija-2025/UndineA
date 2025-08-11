@@ -26,7 +26,7 @@ class QuestionsController < ApplicationController
 
     respond_to do |format|
       if @question.save
-        format.html { redirect_to quiz_questions_path, notice: "Question was successfully created." }
+        format.html { redirect_to [@quiz, @question], notice: "Question was successfully created." }
         format.json { render :show, status: :created, location: @question }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,7 +39,7 @@ class QuestionsController < ApplicationController
   def update
     respond_to do |format|
       if @question.update(question_params)
-        format.html { redirect_to quiz_questions_path, notice: "Question was successfully updated." }
+        format.html { redirect_to quiz_question_path, notice: "Question was successfully updated." }
         format.json { render :show, status: :ok, location: @question }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -53,7 +53,7 @@ class QuestionsController < ApplicationController
     @question.destroy!
 
     respond_to do |format|
-      format.html { redirect_to quiz_questions_path, status: :see_other, notice: "Question was successfully deleted." }
+      format.html { redirect_to quiz_path(@quiz), status: :see_other, notice: "Question was successfully deleted." }
       format.json { head :no_content }
     end
   end

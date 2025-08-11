@@ -10,7 +10,7 @@
 
 <div>
   <div>
-  
+    <%= button_to "Add question", new_quiz_question_path(@quiz, @question),  method: :get %> 
     <%= button_to "Edit this quiz", edit_quiz_path(@quiz), method: :get %> 
     <%= button_to "Delete this quiz", @quiz, method: :delete %>
   </div>

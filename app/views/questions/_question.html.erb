@@ -1,7 +1,7 @@
 <div id="<%= dom_id question %>">
   <p>
     <strong>Question:</strong>
-    <%= question.name %>
+    <%= link_to question.name, [@quiz, question] %>
   </p>
 
 </div>
