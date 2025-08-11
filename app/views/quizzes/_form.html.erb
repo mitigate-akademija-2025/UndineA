@@ -21,6 +21,7 @@
     <%= form.textarea :description %>
   </div>
 
+
   <%= form.fields_for :questions do |question_form| %>
     <% puts question_form.inspect %>
     <fieldset>
@@ -36,6 +37,8 @@
       </div>
     </fieldset>
   <% end %>
+
+
 
   <div>
     <%= form.submit %>
