@@ -12,9 +12,9 @@ class QuizzesController < ApplicationController
 
   # GET /quizzes/new
   def new
-    @quiz = Quiz.new(title: 'Nomaini mani')
+    @quiz = Quiz.new
     2.times do 
-      @quiz.questions.build(name: 'Nomaini!')
+      @quiz.questions.build
     end
   end
 
@@ -55,7 +55,7 @@ class QuizzesController < ApplicationController
     @quiz.destroy!
 
     respond_to do |format|
-      format.html { redirect_to quizzes_path, status: :see_other, notice: "Quiz was successfully destroyed." }
+      format.html { redirect_to quizzes_path, status: :see_other, notice: "Quiz was successfully deleted." }
       format.json { head :no_content }
     end
   end

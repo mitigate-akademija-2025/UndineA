@@ -52,7 +52,7 @@ class QuestionsController < ApplicationController
     @question.destroy!
 
     respond_to do |format|
-      format.html { redirect_to questions_path, status: :see_other, notice: "Question was successfully destroyed." }
+      format.html { redirect_to questions_path, status: :see_other, notice: "Question was successfully deleted." }
       format.json { head :no_content }
     end
   end

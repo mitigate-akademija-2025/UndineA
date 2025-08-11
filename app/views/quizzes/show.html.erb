@@ -3,8 +3,15 @@
 <%= render @quiz %>
 
 <div>
-  <%= link_to "Edit this quiz", edit_quiz_path(@quiz) %> |
-  <%= link_to "Back to quizzes", quizzes_path %>
+<% @quiz.questions.each do |question| %>
+    <%= render question %>
+  <% end %>
+</div>
 
-  <%= button_to "Destroy this quiz", @quiz, method: :delete %>
+<div>
+  <div>
+    <%= button_to "Edit this quiz", edit_quiz_path(@quiz), method: :get %> 
+    <%= button_to "Delete this quiz", @quiz, method: :delete %>
+  </div>
+  <%= link_to "Back to quizzes", quizzes_path %>
 </div>
