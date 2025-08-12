@@ -22,23 +22,7 @@
   </div>
 
 
-  <%= form.fields_for :questions do |question_form| %>
-    <% puts question_form.inspect %>
-    <fieldset>
-      <legend>Question #<%=question_form.index + 1%></legend>
-      <div class="nested-fields">
-        <%= question_form.label :name %>
-        <%= question_form.text_field :name %>
-
-        <%if question_form.object.persisted? %>
-          <%= question_form.check_box :_destroy %>
-          <%= question_form.label :_destroy, "Remove" %>
-        <% end %>
-      </div>
-    </fieldset>
-  <% end %>
-
-
+  
 
   <div>
     <%= form.submit %>

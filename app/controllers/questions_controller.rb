@@ -26,7 +26,7 @@ class QuestionsController < ApplicationController
 
     respond_to do |format|
       if @question.save
-        format.html { redirect_to [@quiz, @question], notice: "Question was successfully created." }
+        format.html { redirect_to @question, notice: "Question was successfully created." }
         format.json { render :show, status: :created, location: @question }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -53,7 +53,7 @@ class QuestionsController < ApplicationController
     @question.destroy!
 
     respond_to do |format|
-      format.html { redirect_to quiz_path(@quiz), status: :see_other, notice: "Question was successfully deleted." }
+      format.html { redirect_to @question.quiz, status: :see_other, notice: "Question was successfully deleted." }
       format.json { head :no_content }
     end
   end
