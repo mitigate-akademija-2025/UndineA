@@ -63,6 +63,10 @@ class AnswersController < ApplicationController
       @question = Question.find_by(id: params[:question_id])
     end
 
+    def set_answer
+      @answer = Answer.find(params.expect(:id))
+    end
+
     # Only allow a list of trusted parameters through.
     def answer_params
       params.expect(answer: [ :name, :istrue ])
