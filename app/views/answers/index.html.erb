@@ -1,0 +1,18 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :name, "Answers" %>
+
+<div><%= @question.name %></div>
+<h1>Answers</h1>
+
+<div id="answers">
+  <% @answers.each do |answer| %>
+    <% render answer %>
+  <% end %>
+</div>
+
+<div>
+<%= button_to "New answer", new_question_answer_path(@question), method: :get%>
+</div>
+<%= link_to "Back to question", @question %>
+<%= link_to "Back to quiz", quiz_path(@question.quiz) %>

@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
   
-  resources :quizzes do 
-    resources :questions
+  resources :quizzes, shallow: true do 
+    resources :questions do
+      resources :answers
+    end
   end
 
-  resources :questions, only: [] do 
-    resources :answers
-  end
+  
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
