@@ -2,7 +2,6 @@
 
 <h1><%= @question.quiz.title %></h1>
 <div>
-  <p>
     <strong>Question:</strong>
       <%= @question.name %>
     <div>
@@ -10,11 +9,11 @@
       <%= render answer %>
     <% end %>
     </div>
-  </p>
 </div>
 
 <div>
-  <%= button_to "Edit this question", edit_question_path(@question) %> |
+  <%= button_to "Add answer", new_question_answer_path(@question, @answer), method: :get %>
+  <%= button_to "Edit this question", edit_question_path(@question) %>
   <%= button_to "Delete this question", @question, method: :delete %>
 </div>
 <%= link_to "Back to quiz", quiz_path(@question.quiz) %>

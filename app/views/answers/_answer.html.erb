@@ -2,7 +2,10 @@
   <p>
     <strong>Answer:</strong>
     <%= link_to answer.name, answer %>
-    <p>Is this the correct one?</p>
-    <%= link_to answer.istrue, answer %>
   </p>
+
+  <% if answer.istrue? %>
+    <p>Correct answer</p>
+  <% end %>
+
 </div>
