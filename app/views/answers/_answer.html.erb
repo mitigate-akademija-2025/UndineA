@@ -1,11 +1,11 @@
-<div id="<%= dom_id answer %>">
+<tr id="<%= dom_id answer %>">
+  <td>
   <p>
-    <strong>Answer:</strong>
     <%= link_to answer.name, answer %>
   </p>
 
   <% if answer.istrue? %>
     <p>(Correct answer)</p>
   <% end %>
-
-</div>
+  </td>
+</tr>

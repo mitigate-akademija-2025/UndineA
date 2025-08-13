@@ -2,11 +2,20 @@
 
 <%= render @quiz %>
 
-<div>
-<% @quiz.questions.each do |question| %>
-    <%= render question %>
-  <% end %>
-</div>
+
+
+<table id="questions">
+  <thead>
+    <tr>
+      <th>Questions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @quiz.questions.each do |question| %>
+      <%= render question %>
+    <% end %>
+  </tbody>
+</table>
 
 
   <div>

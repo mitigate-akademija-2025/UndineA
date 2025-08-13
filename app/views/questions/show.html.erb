@@ -1,15 +1,21 @@
 <p style="color: green"><%= notice %></p>
 
 <h1><%= @question.quiz.title %></h1>
-<div>
-    <strong>Question:</strong>
-      <%= @question.name %>
-    <div>
+<h2><%= @question.name %></h2>
+
+<table id="answers">
+  <thead>
+    <tr>
+      <th>Answers</th>
+    </tr>
+  </thead>
+  <tbody>
     <% @question.answers.each do |answer| %>
       <%= render answer %>
     <% end %>
-    </div>
-</div>
+  </tbody>
+</table>
+
 
 <div>
   <%= button_to "Add answer", new_question_answer_path(@question, @answer), method: :get %>

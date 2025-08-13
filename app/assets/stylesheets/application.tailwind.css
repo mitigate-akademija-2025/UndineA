@@ -13,11 +13,40 @@
 */
 
 @layer base {
+  h1 {
+    @apply font-bold bg-gradient-to-r from-violet-100 via-violet-300 to-violet-100;
+  }
+
+  h2 {
+    @apply font-bold;
+  }
+
   button {
     @apply bg-indigo-400 hover:bg-indigo-600 text-white py-1 px-3 rounded-full;
+  }
+
+  a {
+    @apply hover:text-indigo-600;
+  }
+
+  input[type=text] {
+    @apply outline-none border-2 bg-violet-50 border-gray-300 text-gray-900 text-base rounded-lg focus:ring-slate-500 focus:border-slate-500 block w-80 h-10 pl-4 p-2.5;
   }
 
   input[type=submit] {
     @apply cursor-pointer;
   }
+
+  textarea {
+    @apply outline-none border-2 bg-violet-50  border-gray-300 text-gray-900 text-base rounded-lg focus:ring-slate-500 focus:border-slate-500 w-80 h-40 pl-4 p-2.5;
+  }
+
+  table {
+    @apply w-80;
+  }
+
+  tbody tr {
+    @apply bg-gradient-to-r from-violet-100 via-violet-200 to-violet-100 border-b-2 border-b-violet-200;
+  }
+  
 }
