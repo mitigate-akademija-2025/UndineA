@@ -11,3 +11,13 @@
 }
 
 */
+
+@layer base {
+  button {
+    @apply bg-indigo-400 hover:bg-indigo-600 text-white py-1 px-3 rounded-full;
+  }
+
+  input[type=submit] {
+    @apply cursor-pointer;
+  }
+}

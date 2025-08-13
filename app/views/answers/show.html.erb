@@ -1,7 +1,7 @@
 <p style="color: green"><%= notice %></p>
 
-<h2><%= @answer.question.quiz.title %></h2>
-<h1><%= @answer.question.name %></h1>
+<h1><%= @answer.question.quiz.title %></h1>
+<h2><%= @answer.question.name %></h2>
 <div>
   <p>
     <strong>Answer:</strong>
@@ -16,5 +16,12 @@
   <%= button_to "Edit this answer", edit_answer_path(@answer), method: :get %> 
   <%= button_to "Delete this answer", @answer, method: :delete %>
 </div>
-<%= link_to "Back to question", @answer.question %> |
-<%= link_to "Back to quiz", quiz_path(@answer.question.quiz) %>
+
+<div>
+  <div>
+    <%= link_to "Back to question", @answer.question %>
+  </div>
+  <div>
+    <%= link_to "Back to quiz", quiz_path(@answer.question.quiz) %>
+  </div>
+</div>
