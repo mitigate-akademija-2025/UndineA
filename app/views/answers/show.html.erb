@@ -18,10 +18,6 @@
 </div>
 
 <div>
-  <div>
-    <%= link_to "Back to question", @answer.question %>
-  </div>
-  <div>
+    <%= link_to "Back to question", @answer.question %> | 
     <%= link_to "Back to quiz", quiz_path(@answer.question.quiz) %>
-  </div>
 </div>
